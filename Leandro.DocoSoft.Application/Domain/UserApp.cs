@@ -1,4 +1,5 @@
 ﻿using Leandro.DocoSoft.Common.Exceptions;
+using Leandro.DocoSoft.Common.Utils;
 using Leandro.DocoSoft.Contracts.AppObject;
 using Leandro.DocoSoft.Domain.Entities;
 using Leandro.DocoSoft.Domain.Interfaces;
@@ -22,6 +23,8 @@ namespace Leandro.DocoSoft.Application.Domain
                 throw new AppBaseException("User already exists.");
 
             var entity = Resolve(user);
+            entity.Password = entity.Password.Encrypt();
+
             var createdEntityId = await _repo.AddAsync(entity, cancellation);
 
             return createdEntityId;
