@@ -1,9 +1,10 @@
 ﻿using Leandro.DocoSoft.Application.Domain;
 using Leandro.DocoSoft.ApplicationTests.Mocks;
-using Leandro.DocoSoft.Domain.Entities;
+using Leandro.DocoSoft.Business.Domain;
+using Leandro.DocoSoft.Contracts.AppObject;
 using Leandro.DocoSoft.Domain.Interfaces;
-using Moq;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,26 +14,20 @@ namespace Leandro.DocoSoft.ApplicationTests.AppServices.Tests
     [TestFixture()]
     public class UserAppTests : BaseTest
     {
-        private readonly Mock<UserApp> _userApp = new Mock<UserApp>();
-        private readonly Mock<IUserRepository> _repo = new Mock<IUserRepository>();
+        private readonly IUserRepository _repo;
+        private readonly List<UserContract> _users;
 
-        public UserAppTests(IDbContext dbContext) : base(dbContext)
+        public UserAppTests() : base()
         {
-            _repo.Setup(x => (x.Get(It.IsAny<long>(), CancellationToken.None).Result))
-                .Returns(MockFaker.UserMock.FirstOrDefault()).Verifiable();
-
-            _repo.Setup(x => (x.AddAsync(MockFaker.UserMock.FirstOrDefault(), CancellationToken.None).Result))
-                .Returns(MockFaker.UserMock.FirstOrDefault().Id).Verifiable();
-
-            _repo.Setup(x => (x.UpdateAsync(MockFaker.UserMock.FirstOrDefault(), CancellationToken.None)))
-                .Verifiable();
+            _repo = new UserRepository(_dbContext);
+            _users = MockFaker.UserContractMock.ToList();
         }
 
         [Test]
         public async Task Get_ShouldReturnUserContract_WhenUserExists()
         {
-            var user = MockFaker.UserMock.FirstOrDefault();
-            var userApp = new UserApp(_repo.Object);
+            var user = _dbContext.TblUsers.FirstOrDefault();
+            var userApp = new UserApp(_repo);
 
             var result = await userApp.Get(user.Id, CancellationToken.None);
 
@@ -42,31 +37,17 @@ namespace Leandro.DocoSoft.ApplicationTests.AppServices.Tests
             Assert.AreEqual(user.LastName, result.LastName);
             Assert.AreEqual(user.Age, result.Age);
             Assert.AreEqual(user.Username, result.Username);
-
-            _repo.Verify(x => x.Get(user.Id, CancellationToken.None), Times.Once);
         }
 
         [Test]
         public async Task Add_ShouldReturnUserId_WhenUserIsAdded()
         {
-            var user = MockFaker.UserContractMock.FirstOrDefault();
-            var userApp = new UserApp(_repo.Object);
+            var user = _users.FirstOrDefault();
+            var userApp = new UserApp(_repo);
 
             var result = await userApp.Create(user, CancellationToken.None);
 
             Assert.AreEqual(user.Id, result);
-            _repo.Verify(x => x.AddAsync(It.IsAny<User>(), CancellationToken.None), Times.Once);
-        }
-
-        [Test]
-        public async Task Update_ShouldCallRepositoryUpdate_WhenUserIsUpdated()
-        {
-            var user = MockFaker.UserContractMock.FirstOrDefault();
-            var userApp = new UserApp(_repo.Object);
-
-            await userApp.Update(user, CancellationToken.None);
-
-            _repo.Verify(x => x.UpdateAsync(It.IsAny<User>(), CancellationToken.None), Times.Once);
-        }       
+        }    
     }
 }

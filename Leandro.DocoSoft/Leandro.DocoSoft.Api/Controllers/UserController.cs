@@ -37,9 +37,9 @@ namespace Leandro.DocoSoft.Api.Controllers
         }
 
         [HttpPut("{username}")]
-        public async Task<IActionResult> Update([FromBody] UserContract user, CancellationToken cancellation)
+        public async Task<IActionResult> Update(string username, [FromBody] UserContract user, CancellationToken cancellation)
         {
-            await _app.Update(user, cancellation);
+            await _app.Update(username, user, cancellation);
             return Ok();
         }
     }

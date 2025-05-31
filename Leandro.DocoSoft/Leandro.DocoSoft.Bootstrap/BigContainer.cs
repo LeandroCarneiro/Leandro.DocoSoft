@@ -8,20 +8,20 @@ namespace Leandro.DocoSoft.Bootstrap
 {
     public static class BigContainer
     {
-        public static IServiceCollection RegisterAppServices(this IServiceCollection service)
+        public static IServiceCollection RegisterApp(this IServiceCollection service)
         {
             service.AddTransient<UserApp>();
             return service;
         }
 
-        public static IServiceCollection RegisterAppBusiness(this IServiceCollection service)
+        public static IServiceCollection RegisterRepository(this IServiceCollection service)
         {
             service.AddTransient<IUserRepository, UserRepository>();
 
             return service;
         }
 
-        public static IServiceCollection RegisterAppPersistence(this IServiceCollection service)
+        public static IServiceCollection RegisterPersistence(this IServiceCollection service)
         {
             service.AddDbContext<AppDbContext>();
             service.AddTransient<IDbContext, AppDbContext>();
@@ -29,7 +29,7 @@ namespace Leandro.DocoSoft.Bootstrap
             return service;
         }
 
-        public static IServiceCollection RegisterAppPersistenceTest(this IServiceCollection service)
+        public static IServiceCollection RegisterPersistenceTest(this IServiceCollection service)
         {
             service.AddDbContext<MockDb>();
             service.AddTransient<IDbContext, MockDb>();

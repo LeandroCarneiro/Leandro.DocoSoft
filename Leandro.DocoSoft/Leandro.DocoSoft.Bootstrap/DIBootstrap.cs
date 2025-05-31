@@ -9,9 +9,9 @@ namespace Leandro.DocoSoft.Bootstrap
     {
         public static void RegisterTypes(IServiceCollection service)
         {
-            service.RegisterAppServices()
-                .RegisterAppBusiness()
-                .RegisterAppPersistence();
+            service.RegisterApp()
+                .RegisterRepository()
+                .RegisterPersistence();
 
             AppContainer.SetContainer(service);
             AutoMapperConfiguration.Register();
@@ -21,9 +21,9 @@ namespace Leandro.DocoSoft.Bootstrap
 
         public static void RegisterTypesTest(IServiceCollection service)
         {
-            service.RegisterAppServices()
-                .RegisterAppBusiness()
-                .RegisterAppPersistenceTest();
+            service.RegisterApp()
+                .RegisterRepository()
+                .RegisterPersistenceTest();
 
             AppContainer.SetContainer(service);
             AutoMapperConfiguration.Register();

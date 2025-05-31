@@ -25,6 +25,12 @@ namespace Leandro.DocoSoft.Data
             _log = _loggerFactory.CreateLogger<BaseContext>();
         }
 
+        public BaseContext(DbContextOptions<BaseContext> options)
+        : base(options)
+        {
+        }
+
+
         public IDbContextTransaction BeginTransaction()
         {
             return Database.BeginTransaction();

@@ -6,6 +6,10 @@ namespace Leandro.DocoSoft.Data.Contexts
 {
     public class MockDb : BaseContext, IDbContext
     {
+        public MockDb(DbContextOptions<BaseContext> options) : base(options)
+        {
+        }
+
         public virtual DbSet<User> TblUsers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

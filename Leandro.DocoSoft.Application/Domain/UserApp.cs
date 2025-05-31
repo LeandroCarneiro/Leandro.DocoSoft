@@ -19,7 +19,7 @@ namespace Leandro.DocoSoft.Application.Domain
             if (user == null)
                 throw new AppBaseException("User data needs to be populated.");
 
-            if(_repo.FindAsync(x => x.Username == user.Username, cancellation).Result != null)
+            if((await _repo.FindAsync(x => x.Username == user.Username, cancellation)) != null)
                 throw new AppBaseException("User already exists.");
 
             var entity = Resolve(user);
@@ -36,15 +36,19 @@ namespace Leandro.DocoSoft.Application.Domain
             return Resolve(entity);
         }
 
-        public async Task Update(UserContract user, CancellationToken cancellation)
+        public async Task Update(string username, UserContract user, CancellationToken cancellation)
         {
-            if (user == null)
-                throw new AppBaseException("User data needs to be populated.");
+            if (string.IsNullOrEmpty(username))
+                throw new AppBaseException("Username needs to be provided.");
 
-            if (_repo.FindAsync(x => x.Username == user.Username, cancellation).Result != null)
+            var oldUser = await _repo.FindAsync(x => x.Username == username, cancellation);
+
+            if (oldUser == null)
                 throw new AppBaseException("User already exists.");
 
             var entity = Resolve(user);
+            entity.Id = oldUser!.Id; 
+            
             await _repo.UpdateAsync(entity, cancellation);
         }
     }
