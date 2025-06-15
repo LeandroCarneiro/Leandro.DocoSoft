@@ -2,14 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="14.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Leandro.DocoSoft.Domain\Leandro.DocoSoft.Domain.csproj" />
+    <ProjectReference Include="..\Leandro.DocoSoft.Mapping\Leandro.DocoSoft.Mapping.csproj" />
     <ProjectReference Include="..\Leandro.DocoSoft.ViewModels\Leandro.DocoSoft.Contracts.csproj" />
   </ItemGroup>
 

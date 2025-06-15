@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Leandro.DocoSoft.Business\Leandro.DocoSoft.Repository.csproj" />
     <ProjectReference Include="..\Leandro.DocoSoft.Data\Leandro.DocoSoft.Data.csproj" />
+    <ProjectReference Include="..\Leandro.DocoSoft.Application\Leandro.DocoSoft.Application.csproj" />
     <ProjectReference Include="..\Leandro.DocoSoft.Mapping\Leandro.DocoSoft.Mapping.csproj" />
   </ItemGroup>
 

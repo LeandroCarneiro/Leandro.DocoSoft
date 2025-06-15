@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{C5696B5D-9AA0-4380-A6E6-BAE3D20AA6E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leandro.DocoSoft.Application", "Leandro.DocoSoft.Application\Leandro.DocoSoft.Application.csproj", "{B806781A-85F5-45DB-AC85-AB6CE66F9A7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leandro.DocoSoft.Application", "Leandro.DocoSoft\Leandro.DocoSoft.Application\Leandro.DocoSoft.Application.csproj", "{B806781A-85F5-45DB-AC85-AB6CE66F9A7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
