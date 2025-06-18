@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Common\SertaoArch.UserMi.Common.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.DI\SertaoArch.UserMi.DI.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Domain\SertaoArch.UserMi.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

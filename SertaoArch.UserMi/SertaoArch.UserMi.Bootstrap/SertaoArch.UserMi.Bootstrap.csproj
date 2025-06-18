@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Business\SertaoArch.UserMi.Repository.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Data\SertaoArch.UserMi.Data.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Mapping\SertaoArch.UserMi.Mapping.csproj" />
+  </ItemGroup>
+
+</Project>
