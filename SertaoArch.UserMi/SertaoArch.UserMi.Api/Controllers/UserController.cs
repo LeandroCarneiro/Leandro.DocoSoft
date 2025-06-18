@@ -42,5 +42,12 @@ namespace SertaoArch.UserMi.Api.Controllers
             await _app.Update(username, user, cancellation);
             return Ok();
         }
+
+        [HttpPost("{username}/republish")]
+        public async Task<IActionResult> Republish(string username, CancellationToken cancellation)
+        {
+            await _app.RepublishAsync(username, cancellation);
+            return Ok();
+        }
     }
 }

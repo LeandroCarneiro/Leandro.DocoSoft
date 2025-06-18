@@ -1,4 +1,6 @@
-﻿using SertaoArch.UserMi.Common.Exceptions;
+﻿using Microsoft.Extensions.Configuration;
+using SertaoArch.UserMi.Application.Interface;
+using SertaoArch.UserMi.Common.Exceptions;
 using SertaoArch.UserMi.Common.Utils;
 using SertaoArch.UserMi.Contracts.AppObject;
 using SertaoArch.UserMi.Domain.Entities;
@@ -9,8 +11,16 @@ namespace SertaoArch.UserMi.Application.Domain
     public class UserApp : BaseApp<UserContract, User>
     {
         private new readonly IUserRepository _repo;
-        public UserApp(IUserRepository repo) : base(repo as IUserRepository)
+        private readonly IConfiguration _configuration;
+        private IQueueService _queueService;
+        private readonly string _queueUserCreated;
+
+        public UserApp(IUserRepository repo, IQueueService queueService, IConfiguration configuration) : base(repo)
         {
+            _queueUserCreated = configuration["RabbitMQ:Queues:user_created"] ?? throw new ArgumentException("Queue name for user_created not found in configuration.");
+
+            _configuration = configuration;
+            _queueService = queueService;
             _repo = repo;
         }
 
@@ -27,6 +37,8 @@ namespace SertaoArch.UserMi.Application.Domain
 
             var createdEntityId = await _repo.AddAsync(entity, cancellation);
 
+            await _queueService.PublishAsync(user, _queueUserCreated, cancellation);
+
             return createdEntityId;
         }
 
@@ -34,6 +46,18 @@ namespace SertaoArch.UserMi.Application.Domain
         {
             var entity = await _repo.FindAsync(x => x.Username == username, cancellation);
             return Resolve(entity);
+        }
+
+        public async Task RepublishAsync(string username, CancellationToken cancellation)
+        {
+            var entity = await _repo.FindAsync(x => x.Username == username, cancellation);
+
+            if (entity == null)
+                throw new AppBaseException("User not found.");
+
+            var contract = Resolve(entity);
+
+            await _queueService.PublishAsync(contract, _queueUserCreated, cancellation);
         }
 
         public async Task Update(string username, UserContract user, CancellationToken cancellation)

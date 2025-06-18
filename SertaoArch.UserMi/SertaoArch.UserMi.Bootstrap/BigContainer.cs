@@ -3,6 +3,8 @@ using SertaoArch.UserMi.Business.Domain;
 using SertaoArch.UserMi.Data.Contexts;
 using SertaoArch.UserMi.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using SertaoArch.UserMi.Application.Interface;
+using SertaoArch.QueueServiceRMQ;
 
 namespace SertaoArch.UserMi.Bootstrap
 {
@@ -26,6 +28,12 @@ namespace SertaoArch.UserMi.Bootstrap
             service.AddDbContext<AppDbContext>();
             service.AddTransient<IDbContext, AppDbContext>();
 
+            return service;
+        }
+
+        public static IServiceCollection RegisterService(this IServiceCollection service)
+        {
+            service.AddTransient<IQueueService, QueueService>();
             return service;
         }
 

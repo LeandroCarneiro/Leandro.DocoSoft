@@ -14,6 +14,8 @@ namespace SertaoArch.UserMi.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var builder = WebApplication.CreateBuilder();
+
             services.Configure<FormOptions>(options =>
             {
                 options.ValueCountLimit = int.MaxValue;
@@ -27,7 +29,7 @@ namespace SertaoArch.UserMi.Api
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddHttpClient();
 
-            DIBootstrap.RegisterTypes(services);
+            DIBootstrap.RegisterTypes(services, builder.Configuration);
 
             services.AddSwaggerDocument(document =>
             {

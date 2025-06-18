@@ -2,15 +2,17 @@
 using SertaoArch.UserMi.DI;
 using SertaoArch.UserMi.Mapping;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace SertaoArch.UserMi.Bootstrap
 {
     public static class DIBootstrap
     {
-        public static void RegisterTypes(IServiceCollection service)
+        public static void RegisterTypes(IServiceCollection service, IConfiguration configuration)
         {
             service.RegisterApp()
                 .RegisterRepository()
+                .RegisterService()
                 .RegisterPersistence();
 
             AppContainer.SetContainer(service);
