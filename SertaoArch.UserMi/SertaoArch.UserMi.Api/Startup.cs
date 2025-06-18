@@ -31,8 +31,27 @@ namespace SertaoArch.UserMi.Api
 
             services.AddSwaggerDocument(document =>
             {
-                document.Title = "Gimme Books API";
+                document.Title = "User Mi";
                 document.DocumentName = "swagger";
+                document.Version = "v1";
+                document.Description = "API for User Management";
+                document.PostProcess = d =>
+                {
+                    d.Info.Version = "v1";
+                    d.Info.Title = "User Mi";
+                    d.Info.Description = "API for User Management";
+                    d.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "SertaoArch",
+                        Email = "",
+                        Url = "https://sertaoarch.com"
+                    };
+                    d.Info.License = new NSwag.OpenApiLicense
+                    {
+                        Name = "MIT",
+                        Url = "https://opensource.org/license/mit/"
+                    };
+                };
             });
         }
 
