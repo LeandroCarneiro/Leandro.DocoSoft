@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SertaoArch.UserMi.Domain\SertaoArch.UserMi.Domain.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.ViewModels\SertaoArch.UserMi.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
