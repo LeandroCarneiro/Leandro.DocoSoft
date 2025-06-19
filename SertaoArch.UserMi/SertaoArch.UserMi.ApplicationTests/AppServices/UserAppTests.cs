@@ -27,7 +27,7 @@ namespace SertaoArch.UserMi.ApplicationTests.AppServices.Tests
         public async Task Get_ShouldReturnUserContract_WhenUserExists()
         {
             var user = _dbContext.TblUsers.FirstOrDefault();
-            var userApp = new UserApp(_repo);
+            var userApp = new UserApp(_repo, null, null);
 
             var result = await userApp.Get(user.Id, CancellationToken.None);
 
@@ -43,7 +43,7 @@ namespace SertaoArch.UserMi.ApplicationTests.AppServices.Tests
         public async Task Add_ShouldReturnUserId_WhenUserIsAdded()
         {
             var user = _users.FirstOrDefault();
-            var userApp = new UserApp(_repo);
+            var userApp = new UserApp(_repo, null,null);
 
             var result = await userApp.Create(user, CancellationToken.None);
 
