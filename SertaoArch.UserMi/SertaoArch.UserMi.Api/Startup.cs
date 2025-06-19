@@ -1,5 +1,5 @@
-using SertaoArch.UserMi.Bootstrap;
-using SertaoArch.UserMi.Common.Middlewares;
+using SertaoArch.Bootstrap;
+using SertaoArch.Common.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

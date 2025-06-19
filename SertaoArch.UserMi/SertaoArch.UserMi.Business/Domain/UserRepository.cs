@@ -1,6 +1,6 @@
-﻿using SertaoArch.UserMi.Domain.Entities;
-using SertaoArch.UserMi.Domain.Interfaces;
-using SertaoArch.UserMi.Repository;
+﻿using SertaoArch.Domain.Entities;
+using SertaoArch.Domain.Interfaces;
+using SertaoArch.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SertaoArch.UserMi.Business.Domain
+namespace SertaoArch.Business.Domain
 {
     public class UserRepository : AppRepository<User>, IUserRepository
     {

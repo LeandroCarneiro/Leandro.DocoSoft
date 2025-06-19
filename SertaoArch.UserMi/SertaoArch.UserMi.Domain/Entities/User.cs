@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SertaoArch.UserMi.Domain.Entities
+namespace SertaoArch.Domain.Entities
 {
     [Table("tbl_User")]
     public class User : EntityBase<long>

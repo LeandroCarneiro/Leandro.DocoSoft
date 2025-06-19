@@ -1,6 +1,4 @@
-﻿using SertaoArch.UserMi.Common.Exceptions;
-using SertaoArch.UserMi.DI;
-using SertaoArch.UserMi.Domain;
+﻿using SertaoArch.DI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -8,8 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
+using SertaoArch.Common.Exceptions;
+using SertaoArch.Domain;
 
-namespace SertaoArch.UserMi.Data
+namespace SertaoArch.Data
 {
     public class BaseContext : DbContext
     {

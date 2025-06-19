@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using SertaoArch.UserMi.Application.Interface;
-using SertaoArch.UserMi.Common.Exceptions;
-using SertaoArch.UserMi.Common.Utils;
-using SertaoArch.UserMi.Contracts.AppObject;
-using SertaoArch.UserMi.Domain.Entities;
-using SertaoArch.UserMi.Domain.Interfaces;
+using SertaoArch.Common.Exceptions;
+using SertaoArch.Common.Utils;
+using SertaoArch.Contracts.AppObject;
+using SertaoArch.Domain.Entities;
+using SertaoArch.Domain.Interfaces;
 
 namespace SertaoArch.UserMi.Application.Domain
 {

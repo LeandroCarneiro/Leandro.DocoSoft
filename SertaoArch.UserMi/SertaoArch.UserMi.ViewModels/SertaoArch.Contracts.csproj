@@ -4,8 +4,4 @@
     <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.UserMi.Common\SertaoArch.UserMi.Common.csproj" />
-  </ItemGroup>
-
 </Project>

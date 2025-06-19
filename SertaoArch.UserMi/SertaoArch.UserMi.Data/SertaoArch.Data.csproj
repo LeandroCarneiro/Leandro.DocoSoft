@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.UserMi.Common\SertaoArch.UserMi.Common.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.DI\SertaoArch.UserMi.DI.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.Domain\SertaoArch.UserMi.Domain.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Common\SertaoArch.Common.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.DI\SertaoArch.DI.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Domain\SertaoArch.Domain.csproj" />
   </ItemGroup>
 
 </Project>

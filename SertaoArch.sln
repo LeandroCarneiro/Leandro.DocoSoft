@@ -5,31 +5,33 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SertaoArch.UserMi", "SertaoArch.UserMi", "{89EEF720-07C1-E444-384C-A52FA18102CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Domain", "SertaoArch.UserMi\SertaoArch.UserMi.Domain\SertaoArch.UserMi.Domain.csproj", "{DD59A8B2-409B-1010-204F-862AE1A615E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Domain", "SertaoArch.UserMi\SertaoArch.UserMi.Domain\SertaoArch.Domain.csproj", "{DD59A8B2-409B-1010-204F-862AE1A615E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Mapping", "SertaoArch.UserMi\SertaoArch.UserMi.Mapping\SertaoArch.UserMi.Mapping.csproj", "{19310C45-6E2C-F5C0-FDA3-96A6BA746601}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Mapping", "SertaoArch.UserMi\SertaoArch.UserMi.Mapping\SertaoArch.Mapping.csproj", "{19310C45-6E2C-F5C0-FDA3-96A6BA746601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Data", "SertaoArch.UserMi\SertaoArch.UserMi.Data\SertaoArch.UserMi.Data.csproj", "{1BF0B7BD-714F-0692-2993-730ACA77F6E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Data", "SertaoArch.UserMi\SertaoArch.UserMi.Data\SertaoArch.Data.csproj", "{1BF0B7BD-714F-0692-2993-730ACA77F6E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.ApplicationTests", "SertaoArch.UserMi\SertaoArch.UserMi.ApplicationTests\SertaoArch.UserMi.ApplicationTests.csproj", "{D46FA41D-FC32-30C6-BA47-D6898E82643C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Application", "SertaoArch.UserMi\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj", "{604CF016-B91E-0394-DCDA-A435C70B3937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Contracts", "SertaoArch.UserMi\SertaoArch.UserMi.ViewModels\SertaoArch.UserMi.Contracts.csproj", "{2B26D08B-8748-93AE-52F6-DD334A43D613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Contracts", "SertaoArch.UserMi\SertaoArch.UserMi.ViewModels\SertaoArch.Contracts.csproj", "{2B26D08B-8748-93AE-52F6-DD334A43D613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Common", "SertaoArch.UserMi\SertaoArch.UserMi.Common\SertaoArch.UserMi.Common.csproj", "{F8029520-E852-DF27-1C34-F7E9BF9A4350}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Common", "SertaoArch.UserMi\SertaoArch.UserMi.Common\SertaoArch.Common.csproj", "{F8029520-E852-DF27-1C34-F7E9BF9A4350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.DI", "SertaoArch.UserMi\SertaoArch.UserMi.DI\SertaoArch.UserMi.DI.csproj", "{F8CE2A94-5F50-785A-1266-EC80F4D8D5C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.DI", "SertaoArch.UserMi\SertaoArch.UserMi.DI\SertaoArch.DI.csproj", "{F8CE2A94-5F50-785A-1266-EC80F4D8D5C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Repository", "SertaoArch.UserMi\SertaoArch.UserMi.Business\SertaoArch.UserMi.Repository.csproj", "{EC9C51D4-E278-800E-378C-61F838367789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Repository", "SertaoArch.UserMi\SertaoArch.UserMi.Business\SertaoArch.Repository.csproj", "{EC9C51D4-E278-800E-378C-61F838367789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Bootstrap", "SertaoArch.UserMi\SertaoArch.UserMi.Bootstrap\SertaoArch.UserMi.Bootstrap.csproj", "{1077CED8-BA5F-D940-250C-3CB74E2EE46C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Bootstrap", "SertaoArch.UserMi\SertaoArch.UserMi.Bootstrap\SertaoArch.Bootstrap.csproj", "{1077CED8-BA5F-D940-250C-3CB74E2EE46C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Api", "SertaoArch.UserMi\SertaoArch.UserMi.Api\SertaoArch.UserMi.Api.csproj", "{EDD2DB9E-3566-0ACD-B90A-3B43C6BD0620}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Worker", "SertaoArch.Worker\SertaoArch.Worker.csproj", "{CF1E5362-F1FF-4B01-8B64-7002A538FB51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.QueueServiceRMQ", "SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj", "{2A9C72C7-ECC6-49B5-9C03-2A615D3AF53F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -202,17 +204,16 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DD59A8B2-409B-1010-204F-862AE1A615E0} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{19310C45-6E2C-F5C0-FDA3-96A6BA746601} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{1BF0B7BD-714F-0692-2993-730ACA77F6E8} = {89EEF720-07C1-E444-384C-A52FA18102CF}
+		{19310C45-6E2C-F5C0-FDA3-96A6BA746601} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1BF0B7BD-714F-0692-2993-730ACA77F6E8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{D46FA41D-FC32-30C6-BA47-D6898E82643C} = {89EEF720-07C1-E444-384C-A52FA18102CF}
 		{604CF016-B91E-0394-DCDA-A435C70B3937} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{2B26D08B-8748-93AE-52F6-DD334A43D613} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{F8029520-E852-DF27-1C34-F7E9BF9A4350} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{F8CE2A94-5F50-785A-1266-EC80F4D8D5C1} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{EC9C51D4-E278-800E-378C-61F838367789} = {89EEF720-07C1-E444-384C-A52FA18102CF}
-		{1077CED8-BA5F-D940-250C-3CB74E2EE46C} = {89EEF720-07C1-E444-384C-A52FA18102CF}
+		{F8029520-E852-DF27-1C34-F7E9BF9A4350} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F8CE2A94-5F50-785A-1266-EC80F4D8D5C1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EC9C51D4-E278-800E-378C-61F838367789} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1077CED8-BA5F-D940-250C-3CB74E2EE46C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{EDD2DB9E-3566-0ACD-B90A-3B43C6BD0620} = {89EEF720-07C1-E444-384C-A52FA18102CF}
+		{2A9C72C7-ECC6-49B5-9C03-2A615D3AF53F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2909013C-2667-42FC-86BF-C7CF9A504F7E}

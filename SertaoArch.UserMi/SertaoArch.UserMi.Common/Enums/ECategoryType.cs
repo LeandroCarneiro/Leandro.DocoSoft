@@ -1,5 +1,5 @@
 ﻿
-namespace SertaoArch.UserMi.Common
+namespace SertaoArch.Common
 {
     public enum ECategoryType
     {

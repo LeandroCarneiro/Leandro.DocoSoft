@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Threading;
-using SertaoArch.UserMi.Domain.Entities;
+using SertaoArch.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace SertaoArch.UserMi.Domain.Interfaces
+namespace SertaoArch.Domain.Interfaces
 {
     public interface IDbContext : IDisposable
     {

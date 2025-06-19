@@ -1,11 +1,10 @@
-﻿using SertaoArch.UserMi.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SertaoArch.UserMi.Domain.Interfaces
+namespace SertaoArch.Domain.Interfaces
 {
     public interface ICrud<T, TIdType>
     {

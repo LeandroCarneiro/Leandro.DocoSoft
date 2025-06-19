@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
-namespace SertaoArch.UserMi.Contracts
+namespace SertaoArch.Contracts
 {
     public interface IEntity<T>
     {

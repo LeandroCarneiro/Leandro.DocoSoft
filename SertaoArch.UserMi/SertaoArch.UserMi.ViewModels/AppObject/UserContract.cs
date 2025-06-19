@@ -1,4 +1,4 @@
-﻿namespace SertaoArch.UserMi.Contracts.AppObject
+﻿namespace SertaoArch.Contracts.AppObject
 {
     public class UserContract : ContractBase<long>
     {

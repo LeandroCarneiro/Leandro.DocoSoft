@@ -1,9 +1,9 @@
-﻿using SertaoArch.UserMi.Domain.Interfaces;
+﻿using SertaoArch.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
-using SertaoArch.UserMi.Data.Contexts;
+using SertaoArch.Data.Contexts;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using SertaoArch.UserMi.Data;
+using SertaoArch.Data;
 using SertaoArch.UserMi.ApplicationTests.Mocks;
 
 namespace SertaoArch.UserMi.ApplicationTests

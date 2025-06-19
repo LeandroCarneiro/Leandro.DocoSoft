@@ -1,5 +1,5 @@
 ﻿
-namespace SertaoArch.UserMi.Contracts
+namespace SertaoArch.Contracts
 {
     public interface IAppService
     {

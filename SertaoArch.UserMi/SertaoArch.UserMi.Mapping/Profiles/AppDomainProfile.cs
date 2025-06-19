@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using SertaoArch.UserMi.Domain;
-using SertaoArch.UserMi.Domain.Entities;
-using SertaoArch.UserMi.Contracts;
-using SertaoArch.UserMi.Contracts.AppObject;
+using SertaoArch.Domain;
+using SertaoArch.Domain.Entities;
+using SertaoArch.Contracts;
+using SertaoArch.Contracts.AppObject;
 
-namespace SertaoArch.UserMi.Mapping.Profiles
+namespace SertaoArch.Mapping.Profiles
 {
     public class AppDomainProfile : Profile
     {

@@ -1,4 +1,4 @@
-﻿namespace SertaoArch.UserMi.Common
+﻿namespace SertaoArch.Common
 {
     public class ApiSettings
     {

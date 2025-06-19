@@ -1,8 +1,8 @@
-﻿using SertaoArch.UserMi.Common.Exceptions;
-using SertaoArch.UserMi.Contracts;
-using SertaoArch.UserMi.Domain;
-using SertaoArch.UserMi.Domain.Interfaces;
-using SertaoArch.UserMi.Mapping;
+﻿using SertaoArch.Common.Exceptions;
+using SertaoArch.Contracts;
+using SertaoArch.Domain;
+using SertaoArch.Domain.Interfaces;
+using SertaoArch.Mapping;
 
 namespace SertaoArch.UserMi.Application.Domain
 {

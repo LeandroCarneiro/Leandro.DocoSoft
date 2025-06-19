@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using SertaoArch.UserMi.Application.Domain;
-using SertaoArch.UserMi.Contracts.AppObject;
+using SertaoArch.Contracts.AppObject;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;

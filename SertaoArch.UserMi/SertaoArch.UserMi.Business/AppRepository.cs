@@ -1,5 +1,5 @@
-﻿using SertaoArch.UserMi.Domain;
-using SertaoArch.UserMi.Domain.Interfaces;
+﻿using SertaoArch.Domain;
+using SertaoArch.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SertaoArch.UserMi.Repository
+namespace SertaoArch.Repository
 {
     public abstract class AppRepository<TEntity> : ICrud<TEntity, long> where TEntity : EntityBase<long>
     {

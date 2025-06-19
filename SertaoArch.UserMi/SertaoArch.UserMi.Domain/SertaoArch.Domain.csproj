@@ -8,8 +8,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.UserMi.Common\SertaoArch.UserMi.Common.csproj" />
-  </ItemGroup>
-
 </Project>

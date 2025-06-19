@@ -1,8 +1,8 @@
 ﻿using SertaoArch.UserMi.Application.Domain;
 using SertaoArch.UserMi.ApplicationTests.Mocks;
-using SertaoArch.UserMi.Business.Domain;
-using SertaoArch.UserMi.Contracts.AppObject;
-using SertaoArch.UserMi.Domain.Interfaces;
+using SertaoArch.Business.Domain;
+using SertaoArch.Contracts.AppObject;
+using SertaoArch.Domain.Interfaces;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;

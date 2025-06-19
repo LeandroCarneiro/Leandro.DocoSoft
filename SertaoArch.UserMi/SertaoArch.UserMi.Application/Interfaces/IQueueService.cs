@@ -1,4 +1,4 @@
-using SertaoArch.UserMi.Contracts;
+using SertaoArch.Contracts;
 
 namespace SertaoArch.UserMi.Application.Interface
 {

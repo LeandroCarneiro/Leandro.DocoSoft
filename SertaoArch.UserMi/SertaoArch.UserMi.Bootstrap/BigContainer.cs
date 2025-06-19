@@ -1,12 +1,12 @@
 ﻿using SertaoArch.UserMi.Application.Domain;
-using SertaoArch.UserMi.Business.Domain;
-using SertaoArch.UserMi.Data.Contexts;
-using SertaoArch.UserMi.Domain.Interfaces;
+using SertaoArch.Business.Domain;
+using SertaoArch.Data.Contexts;
+using SertaoArch.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using SertaoArch.UserMi.Application.Interface;
 using SertaoArch.QueueServiceRMQ;
 
-namespace SertaoArch.UserMi.Bootstrap
+namespace SertaoArch.Bootstrap
 {
     public static class BigContainer
     {

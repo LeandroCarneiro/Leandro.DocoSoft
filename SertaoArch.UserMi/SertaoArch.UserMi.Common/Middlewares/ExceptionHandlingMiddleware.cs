@@ -1,11 +1,11 @@
-﻿using SertaoArch.UserMi.Common.Exceptions;
+﻿using SertaoArch.Common.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
-namespace SertaoArch.UserMi.Common.Middlewares
+namespace SertaoArch.Common.Middlewares
 {
     public class ExceptionHandlingMiddleware
     {

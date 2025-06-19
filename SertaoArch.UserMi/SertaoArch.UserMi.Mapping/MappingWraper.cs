@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace SertaoArch.UserMi.Mapping
+namespace SertaoArch.Mapping
 {
     public class MappingWraper
     {

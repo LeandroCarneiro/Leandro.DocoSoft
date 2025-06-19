@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace SertaoArch.UserMi.DI
+namespace SertaoArch.DI
 {
     public static class AppContainer
     {

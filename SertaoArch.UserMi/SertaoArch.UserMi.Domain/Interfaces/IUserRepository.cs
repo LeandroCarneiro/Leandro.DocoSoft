@@ -1,8 +1,8 @@
-﻿using SertaoArch.UserMi.Domain.Entities;
+﻿using SertaoArch.Domain.Entities;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace SertaoArch.UserMi.Domain.Interfaces
+namespace SertaoArch.Domain.Interfaces
 {
     public interface IUserRepository : ICrud<User, long>
     {

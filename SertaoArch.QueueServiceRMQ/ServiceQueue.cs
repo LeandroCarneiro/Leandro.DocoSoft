@@ -3,7 +3,7 @@ using System.Text.Json;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 using SertaoArch.UserMi.Application.Interface;
-using SertaoArch.UserMi.Contracts;
+using SertaoArch.Contracts;
 
 namespace SertaoArch.QueueServiceRMQ
 {

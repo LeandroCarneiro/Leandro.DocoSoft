@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using SertaoArch.UserMi.Mapping.Profiles;
+using SertaoArch.Mapping.Profiles;
 
-namespace SertaoArch.UserMi.Mapping
+namespace SertaoArch.Mapping
 {
     public static class AutoMapperConfiguration
     {

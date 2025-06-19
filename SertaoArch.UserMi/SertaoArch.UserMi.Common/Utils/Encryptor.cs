@@ -1,4 +1,4 @@
-﻿namespace SertaoArch.UserMi.Common.Utils
+﻿namespace SertaoArch.Common.Utils
 {
     public static class Encryptor
     {

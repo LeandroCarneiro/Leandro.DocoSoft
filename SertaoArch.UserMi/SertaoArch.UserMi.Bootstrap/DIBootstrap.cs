@@ -1,10 +1,10 @@
-﻿using SertaoArch.UserMi.Data.Contexts;
-using SertaoArch.UserMi.DI;
-using SertaoArch.UserMi.Mapping;
+﻿using SertaoArch.Data.Contexts;
+using SertaoArch.DI;
+using SertaoArch.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
-namespace SertaoArch.UserMi.Bootstrap
+namespace SertaoArch.Bootstrap
 {
     public static class DIBootstrap
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SertaoArch.UserMi.Domain
+namespace SertaoArch.Domain
 {
     public interface IEntity
     {

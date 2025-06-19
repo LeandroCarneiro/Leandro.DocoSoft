@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SertaoArch.UserMi.Common.InternalObjects
+namespace SertaoArch.Common.InternalObjects
 {
     public abstract class BaseResult
     {

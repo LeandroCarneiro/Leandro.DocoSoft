@@ -1,9 +1,9 @@
-﻿using SertaoArch.UserMi.Domain.Entities;
-using SertaoArch.UserMi.Domain.Interfaces;
+﻿using SertaoArch.Domain.Entities;
+using SertaoArch.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace SertaoArch.UserMi.Data.Contexts
+namespace SertaoArch.Data.Contexts
 {
     public class AppDbContext : BaseContext, IDbContext
     {

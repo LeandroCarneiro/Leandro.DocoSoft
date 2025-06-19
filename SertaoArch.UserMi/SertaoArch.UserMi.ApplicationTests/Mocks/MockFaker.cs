@@ -1,6 +1,6 @@
 ﻿using ComplexFaker;
-using SertaoArch.UserMi.Contracts.AppObject;
-using SertaoArch.UserMi.Domain.Entities;
+using SertaoArch.Contracts.AppObject;
+using SertaoArch.Domain.Entities;
 using System.Collections.Generic;
 
 namespace SertaoArch.UserMi.ApplicationTests.Mocks

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SertaoArch.UserMi.Common.Exceptions
+namespace SertaoArch.Common.Exceptions
 {
     public class AppBaseException : Exception
     {

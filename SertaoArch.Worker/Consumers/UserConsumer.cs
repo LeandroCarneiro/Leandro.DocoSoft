@@ -1,14 +1,17 @@
-// public class ConsumerHostedService : BackgroundService
-// {
-//     private readonly IConsumerService _consumerService;
+using Microsoft.Extensions.Hosting;
+using SertaoArch.QueueServiceRMQ.Interfaces;
 
-//     public ConsumerHostedService(IConsumerService consumerService)
-//     {
-//         _consumerService = consumerService;
-//     }
+public class ConsumerHostedService : BackgroundService
+{
+    private readonly IConsumerService _consumerService;
 
-//     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-//     {
-//         await _consumerService.ReadMessgaes();
-//     }
-// }
+    public ConsumerHostedService(IConsumerService consumerService)
+    {
+        _consumerService = consumerService;
+    }
+
+    protected override async Task ExecuteAsync(CancellationToken cancellation)
+    {
+        await _consumerService.ReadMessgaesAsync(cancellation);
+    }
+}

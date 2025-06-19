@@ -1,8 +1,8 @@
-﻿using SertaoArch.UserMi.Domain.Entities;
-using SertaoArch.UserMi.Domain.Interfaces;
+﻿using SertaoArch.Domain.Entities;
+using SertaoArch.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace SertaoArch.UserMi.Data.Contexts
+namespace SertaoArch.Data.Contexts
 {
     public class MockDb : BaseContext, IDbContext
     {

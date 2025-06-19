@@ -1,5 +1,5 @@
 ﻿
-namespace SertaoArch.UserMi.Common.Exceptions
+namespace SertaoArch.Common.Exceptions
 {
     public class InvalidObjectException : AppBaseException
     {
