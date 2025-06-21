@@ -4,48 +4,72 @@ using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 using SertaoArch.UserMi.Application.Interface;
 using SertaoArch.Contracts;
+using RabbitMQ.Client.Events;
+using SertaoArch.UserMi.Application.Interfaces;
+using System.Threading;
 
 namespace SertaoArch.QueueServiceRMQ
 {
     public class QueueService : IQueueService
     {
-        private readonly ConnectionFactory _factory;
         private readonly IConfiguration _configuration;
+        private readonly ConnectionFactory _factory;
 
         public QueueService(IConfiguration configuration)
         {
             _configuration = configuration;
-
-            _factory = new ConnectionFactory
+            _factory = new ConnectionFactory()
             {
-                HostName = _configuration["RabbitMQ:HostName"]!,
-                Port = int.Parse(_configuration["RabbitMQ:Port"]!),
-                UserName = _configuration["RabbitMQ:UserName"]!,
-                Password = _configuration["RabbitMQ:Password"]!
+                HostName = _configuration["RabbitMQ:HostName"] ?? "localhost",
+                Port = int.TryParse(_configuration["RabbitMQ:Port"], out var port) ? port : 5672,
+                UserName = _configuration["RabbitMQ:UserName"] ?? "guest",
+                Password = _configuration["RabbitMQ:Password"] ?? "guest"
             };
+        }
+
+        private async Task<IChannel> CreateChannelAsync(string queueName, CancellationToken cancellation)
+        {
+            var connection = await _factory.CreateConnectionAsync(cancellation);
+            var channel = await connection.CreateChannelAsync();
+
+            await channel.QueueDeclareAsync(queue: queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
+
+            return channel;
         }
 
         public async Task PublishAsync<T>(T message, string queueName, CancellationToken cancellationToken = default) where T : ContractBase<long>
         {
-            using var connection = await _factory.CreateConnectionAsync(cancellationToken);
-            using var channel = await connection.CreateChannelAsync();
+            using (var channel = await CreateChannelAsync(queueName, cancellationToken))
+            {
+                var body = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
+                await channel.BasicPublishAsync("", routingKey: queueName, body: body, cancellationToken);
 
-            await channel.QueueDeclareAsync(queue: queueName,
-                                 durable: true,
-                                 exclusive: false,
-                                 autoDelete: false,
-                                 arguments: null);
+                Console.WriteLine($"[x] Sent {JsonSerializer.Serialize(message)} to queue {queueName}");
 
-            var body = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
+                await Task.CompletedTask;
+            }
+        }
 
-            await channel.BasicPublishAsync(exchange: "",
-                                 routingKey: queueName,
-                                 body: body,
-                                 cancellationToken);
+        public async Task StartListeningAsync(string queueName, string consumerName, IConsumerService consumerService, CancellationToken cancellation)
+        {
+            var channel = await CreateChannelAsync(queueName, cancellation);
+            var consumer = new AsyncEventingBasicConsumer(channel);
 
-            Console.WriteLine($"[x] Sent {JsonSerializer.Serialize(message)} to queue {queueName}");
+            consumer.ReceivedAsync += async (_, ea)  => 
+            {
+                var body = ea.Body.ToArray();
+                var message = Encoding.UTF8.GetString(body);
+                await consumerService.ProcessAsync(message, cancellation);
+                await channel.BasicAckAsync(ea.DeliveryTag, false);
+            };
 
-            await Task.CompletedTask;
+            await channel.BasicConsumeAsync(
+                queue: queueName,
+                consumerTag: consumerName,
+                autoAck: false,
+                consumer: consumer);
+
+            Console.WriteLine($"Listening to queue: {queueName}");
         }
     }
 }

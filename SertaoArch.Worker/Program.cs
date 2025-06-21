@@ -1,45 +1,25 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
-namespace SertaoArch.Worker
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static async Task Main(string[] args)
-        {
-            //var host = Host.CreateDefaultBuilder(args)
-            //    .ConfigureServices((hostContext, services) =>
-            //    {
-            //        services.AddHostedService<ConsumerService>();
-            //    })
-            //    .Build();
-
-            //await host.RunAsync();
-        }
+        var host = CreateHostBuilder(args).Build();
+        host.Run();
     }
 
-    public class ConsumerService : BackgroundService
-    {
-        private readonly ILogger<ConsumerService> _logger;
-
-        public ConsumerService(ILogger<ConsumerService> logger)
-        {
-            _logger = logger;
-        }
-
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            _logger.LogInformation("Consumer started.");
-
-            while (!stoppingToken.IsCancellationRequested)
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
             {
-                // Simulate consuming a message
-                _logger.LogInformation("Consuming message at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
-            }
-
-            _logger.LogInformation("Consumer stopped.");
-        }
-    }
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                config.AddEnvironmentVariables();
+            })
+            .ConfigureServices((hostContext, services) =>
+            {
+                var startup = new Startup(hostContext.Configuration);
+                startup.ConfigureServices(services);
+            });
 }
