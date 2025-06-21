@@ -1,10 +1,10 @@
-﻿using SertaoArch.UserMi.Application.Domain;
+﻿using Microsoft.Extensions.DependencyInjection;
 using SertaoArch.Business.Domain;
 using SertaoArch.Data.Contexts;
 using SertaoArch.Domain.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
-using SertaoArch.UserMi.Application.Interface;
 using SertaoArch.QueueServiceRMQ;
+using SertaoArch.UserMi.Application.Domain;
+using SertaoArch.UserMi.Application.Interface;
 
 namespace SertaoArch.Bootstrap
 {

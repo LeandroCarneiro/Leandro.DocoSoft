@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.Common\SertaoArch.Common.csproj" />
-    <ProjectReference Include="..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
-    <ProjectReference Include="..\SertaoArch.Mapping\SertaoArch.Mapping.csproj" />
-    <ProjectReference Include="..\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Ini" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Ini" Version="9.0.6" />
+    <ProjectReference Include="..\..\SertaoArch.Common\SertaoArch.Common.csproj" />
+    <ProjectReference Include="..\..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
+    <ProjectReference Include="..\..\SertaoArch.Mapping\SertaoArch.Mapping.csproj" />
+    <ProjectReference Include="..\..\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
