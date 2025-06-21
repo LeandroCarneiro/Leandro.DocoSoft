@@ -11,8 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj" />
     <ProjectReference Include="..\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.Business\SertaoArch.Repository.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.Data\SertaoArch.Data.csproj" />
+    <ProjectReference Include="..\SertaoArch.Business\SertaoArch.Repository.csproj" />
+    <ProjectReference Include="..\SertaoArch.Data\SertaoArch.Data.csproj" />
   </ItemGroup>
 
 </Project>

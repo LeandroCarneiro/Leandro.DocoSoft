@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.UserMi.Common\SertaoArch.Common.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.Domain\SertaoArch.Domain.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.Mapping\SertaoArch.Mapping.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi.ViewModels\SertaoArch.Contracts.csproj" />
+    <ProjectReference Include="..\SertaoArch.Common\SertaoArch.Common.csproj" />
+    <ProjectReference Include="..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
+    <ProjectReference Include="..\SertaoArch.Mapping\SertaoArch.Mapping.csproj" />
+    <ProjectReference Include="..\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
