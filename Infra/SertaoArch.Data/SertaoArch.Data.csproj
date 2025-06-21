@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Entities\SertaoArch.Domain\SertaoArch.Domain.csproj" />
     <ProjectReference Include="..\SertaoArch.Common\SertaoArch.Common.csproj" />
     <ProjectReference Include="..\SertaoArch.DI\SertaoArch.DI.csproj" />
-    <ProjectReference Include="..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
   </ItemGroup>
 
 </Project>

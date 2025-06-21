@@ -5,31 +5,31 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SertaoArch.UserMi", "SertaoArch.UserMi", "{89EEF720-07C1-E444-384C-A52FA18102CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Domain", "SertaoArch.Domain\SertaoArch.Domain.csproj", "{DD59A8B2-409B-1010-204F-862AE1A615E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Domain", "Entities\SertaoArch.Domain\SertaoArch.Domain.csproj", "{DD59A8B2-409B-1010-204F-862AE1A615E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Mapping", "SertaoArch.Mapping\SertaoArch.Mapping.csproj", "{19310C45-6E2C-F5C0-FDA3-96A6BA746601}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Mapping", "Infra\SertaoArch.Mapping\SertaoArch.Mapping.csproj", "{19310C45-6E2C-F5C0-FDA3-96A6BA746601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Data", "SertaoArch.Data\SertaoArch.Data.csproj", "{1BF0B7BD-714F-0692-2993-730ACA77F6E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Data", "Infra\SertaoArch.Data\SertaoArch.Data.csproj", "{1BF0B7BD-714F-0692-2993-730ACA77F6E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.ApplicationTests", "SertaoArch.UserMi\SertaoArch.UserMi.ApplicationTests\SertaoArch.UserMi.ApplicationTests.csproj", "{D46FA41D-FC32-30C6-BA47-D6898E82643C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Application", "SertaoArch.UserMi\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj", "{604CF016-B91E-0394-DCDA-A435C70B3937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Contracts", "SertaoArch.ViewModels\SertaoArch.Contracts.csproj", "{2B26D08B-8748-93AE-52F6-DD334A43D613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Contracts", "Entities\SertaoArch.ViewModels\SertaoArch.Contracts.csproj", "{2B26D08B-8748-93AE-52F6-DD334A43D613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Common", "SertaoArch.Common\SertaoArch.Common.csproj", "{F8029520-E852-DF27-1C34-F7E9BF9A4350}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Common", "Infra\SertaoArch.Common\SertaoArch.Common.csproj", "{F8029520-E852-DF27-1C34-F7E9BF9A4350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.DI", "SertaoArch.DI\SertaoArch.DI.csproj", "{F8CE2A94-5F50-785A-1266-EC80F4D8D5C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.DI", "Infra\SertaoArch.DI\SertaoArch.DI.csproj", "{F8CE2A94-5F50-785A-1266-EC80F4D8D5C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Repository", "SertaoArch.Business\SertaoArch.Repository.csproj", "{EC9C51D4-E278-800E-378C-61F838367789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Repository", "Infra\SertaoArch.Repository\SertaoArch.Repository.csproj", "{EC9C51D4-E278-800E-378C-61F838367789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Bootstrap", "SertaoArch.Bootstrap\SertaoArch.Bootstrap.csproj", "{1077CED8-BA5F-D940-250C-3CB74E2EE46C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Bootstrap", "Infra\SertaoArch.Bootstrap\SertaoArch.Bootstrap.csproj", "{1077CED8-BA5F-D940-250C-3CB74E2EE46C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.UserMi.Api", "SertaoArch.UserMi\SertaoArch.UserMi.Api\SertaoArch.UserMi.Api.csproj", "{EDD2DB9E-3566-0ACD-B90A-3B43C6BD0620}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.Worker", "SertaoArch.Worker\SertaoArch.Worker.csproj", "{CF1E5362-F1FF-4B01-8B64-7002A538FB51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.QueueServiceRMQ", "SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj", "{2A9C72C7-ECC6-49B5-9C03-2A615D3AF53F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SertaoArch.QueueServiceRMQ", "Infra\SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj", "{2A9C72C7-ECC6-49B5-9C03-2A615D3AF53F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject

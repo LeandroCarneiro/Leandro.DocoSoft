@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SertaoArch.Business.Domain
+namespace SertaoArch.Repository.Domain
 {
     public class UserRepository : AppRepository<User>, IUserRepository
     {

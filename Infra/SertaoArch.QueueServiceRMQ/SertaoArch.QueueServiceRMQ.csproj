@@ -10,6 +10,7 @@
     <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.UserMi\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
+    <ProjectReference Include="..\..\Entities\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
+    <ProjectReference Include="..\..\SertaoArch.UserMi\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
   </ItemGroup>
 </Project>

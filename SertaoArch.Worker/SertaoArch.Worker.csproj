@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj" />
+    <ProjectReference Include="..\Infra\SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj" />
   </ItemGroup>
 
 </Project>

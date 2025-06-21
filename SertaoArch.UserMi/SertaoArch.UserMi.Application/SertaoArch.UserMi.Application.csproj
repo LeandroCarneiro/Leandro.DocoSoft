@@ -11,10 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SertaoArch.Common\SertaoArch.Common.csproj" />
-    <ProjectReference Include="..\..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
-    <ProjectReference Include="..\..\SertaoArch.Mapping\SertaoArch.Mapping.csproj" />
-    <ProjectReference Include="..\..\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
+    <ProjectReference Include="..\..\Entities\SertaoArch.Domain\SertaoArch.Domain.csproj" />
+    <ProjectReference Include="..\..\Entities\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
+    <ProjectReference Include="..\..\Infra\SertaoArch.Common\SertaoArch.Common.csproj" />
+    <ProjectReference Include="..\..\Infra\SertaoArch.Mapping\SertaoArch.Mapping.csproj" />
   </ItemGroup>
 
 </Project>

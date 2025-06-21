@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
+    <ProjectReference Include="..\..\Entities\SertaoArch.Domain\SertaoArch.Domain.csproj" />
   </ItemGroup>
 
 </Project>

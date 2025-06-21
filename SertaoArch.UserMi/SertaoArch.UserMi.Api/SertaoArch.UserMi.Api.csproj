@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SertaoArch.Bootstrap\SertaoArch.Bootstrap.csproj" />
+    <ProjectReference Include="..\..\Entities\SertaoArch.ViewModels\SertaoArch.Contracts.csproj" />
+    <ProjectReference Include="..\..\Infra\SertaoArch.Bootstrap\SertaoArch.Bootstrap.csproj" />
+    <ProjectReference Include="..\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
   </ItemGroup>
 
 </Project>

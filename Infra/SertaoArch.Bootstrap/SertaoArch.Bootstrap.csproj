@@ -9,12 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SertaoArch.Business\SertaoArch.Repository.csproj" />
     <ProjectReference Include="..\SertaoArch.Data\SertaoArch.Data.csproj" />
-    <ProjectReference Include="..\SertaoArch.Domain\SertaoArch.Domain.csproj" />
     <ProjectReference Include="..\SertaoArch.Mapping\SertaoArch.Mapping.csproj" />
     <ProjectReference Include="..\SertaoArch.QueueServiceRMQ\SertaoArch.QueueServiceRMQ.csproj" />
-    <ProjectReference Include="..\SertaoArch.UserMi\SertaoArch.UserMi.Application\SertaoArch.UserMi.Application.csproj" />
+    <ProjectReference Include="..\SertaoArch.Repository\SertaoArch.Repository.csproj" />
   </ItemGroup>
 
 </Project>

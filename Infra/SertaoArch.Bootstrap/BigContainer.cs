@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SertaoArch.Business.Domain;
+using SertaoArch.Repository.Domain;
 using SertaoArch.Data.Contexts;
 using SertaoArch.Domain.Interfaces;
 using SertaoArch.QueueServiceRMQ;

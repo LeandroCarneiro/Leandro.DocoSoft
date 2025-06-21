@@ -1,6 +1,6 @@
 ﻿using SertaoArch.UserMi.Application.Domain;
 using SertaoArch.UserMi.ApplicationTests.Mocks;
-using SertaoArch.Business.Domain;
+using SertaoArch.Repository.Domain;
 using SertaoArch.Contracts.AppObject;
 using SertaoArch.Domain.Interfaces;
 using NUnit.Framework;
