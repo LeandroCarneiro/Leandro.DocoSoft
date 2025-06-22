@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RabbitMQ.Client;
-using SertaoArch.Worker.Services;
+using SertaoArch.Worker;
+using SertaoArch.Worker.Comsumers;
 
 
 public class Startup
@@ -14,8 +15,8 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddHostedService<UserWorker>();
-        services.AddTransient<UserConsumerService>();
+        services.AddHostedService<Worker<CreateUserConsumer>>();
+        services.AddTransient<CreateUserConsumer>();
 
         services.AddSingleton(async sp =>
         {

@@ -1,25 +1,26 @@
-﻿using SertaoArch.QueueServiceRMQ;
-using Microsoft.Extensions.Configuration;
-using SertaoArch.UserMi.Application.Interfaces;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SertaoArch.QueueServiceRMQ;
+using SertaoArch.UserMi.Application.Interfaces;
 
-namespace SertaoArch.Worker.Services
+namespace SertaoArch.Worker.Comsumers
 {
-    public class UserConsumerService : QueueService, IConsumerService
+    public abstract class Consumer : QueueService, IConsumerService
     {
         public readonly string _queueName;
-        private readonly ILogger<UserConsumerService> _logger;
+        private readonly ILogger<Consumer> _logger;
 
-        public UserConsumerService(IConfiguration configuration, ILogger<UserConsumerService> logger) : base(configuration)
+        public Consumer(IConfiguration configuration, ILogger<Consumer> logger, string queueTag) : base(configuration)
         {
-            _queueName = configuration["RabbitMQ:Queues:user_created"] ?? "user-created";
+            _queueName = configuration[$"RabbitMQ:Queues:{queueTag}"]!;
             _logger = logger;
         }
-        
+
         public async Task ProcessAsync(string message, CancellationToken cancellation)
         {
             try
             {
+                await Execute(message, cancellation);
                 _logger.LogInformation("Waiting for messages from RabbitMQ queue '{QueueName}'...", _queueName);
             }
             catch (OperationCanceledException)
@@ -31,5 +32,7 @@ namespace SertaoArch.Worker.Services
                 _logger.LogError(ex, "Error while consuming messages from RabbitMQ.");
             }
         }
+
+        public abstract Task Execute(string message, CancellationToken cancellation);
     }
 }

@@ -63,12 +63,7 @@ namespace SertaoArch.QueueServiceRMQ
                 await channel.BasicAckAsync(ea.DeliveryTag, false);
             };
 
-            await channel.BasicConsumeAsync(
-                queue: queueName,
-                consumerTag: consumerName,
-                autoAck: false,
-                consumer: consumer);
-
+            await channel.BasicConsumeAsync(queue: queueName, consumerTag: consumerName, autoAck: false, consumer: consumer);
             Console.WriteLine($"Listening to queue: {queueName}");
         }
     }
