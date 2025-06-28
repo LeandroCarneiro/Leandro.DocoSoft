@@ -1,0 +1,50 @@
+# Build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Documentation
+README.md
+*.md
+
+# Logs
+logs/
+*.log
+
+# Runtime directories
+**/wwwroot/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
