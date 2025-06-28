@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoDB.Driver;
 using RabbitMQ.Client;
+using SertaoArch.Contracts.AppObject;
 using SertaoArch.Worker;
 using SertaoArch.Worker.Comsumers;
 
@@ -15,7 +17,7 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddHostedService<Worker<CreateUserConsumer>>();
+        services.AddHostedService<Worker<CreateUserConsumer,UserContract>>();
         services.AddTransient<CreateUserConsumer>();
 
         services.AddSingleton(async sp =>
@@ -35,6 +37,13 @@ public class Startup
         {
             var connection = sp.GetRequiredService<IConnection>();
             return await connection.CreateChannelAsync();
+        });
+
+        services.AddSingleton<IMongoClient>(sp =>
+        {
+            var configuration = sp.GetRequiredService<IConfiguration>();
+            var connectionString = configuration["MongoDB:ConnectionString"];
+            return new MongoClient(connectionString);
         });
 
         services.AddHealthChecks().AddRabbitMQ(provider =>

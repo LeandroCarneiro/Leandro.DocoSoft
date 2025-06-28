@@ -1,15 +1,18 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SertaoArch.Contracts;
 using SertaoArch.Worker.Comsumers;
 
 namespace SertaoArch.Worker
 {
-    public class Worker<T> : BackgroundService where T : Consumer 
+    public class Worker<T,TC> : BackgroundService
+    where T : Consumer<TC>
+    where TC : ContractBase<long>
     {
         private readonly T _consumerService;
-        private readonly ILogger<Worker<T>> _logger;
+        private readonly ILogger<Worker<T,TC>> _logger;
 
-        public Worker(T consumerService, ILogger<Worker<T>> logger)
+        public Worker(T consumerService, ILogger<Worker<T,TC>> logger)
         {
             _logger = logger;
             _consumerService = consumerService;

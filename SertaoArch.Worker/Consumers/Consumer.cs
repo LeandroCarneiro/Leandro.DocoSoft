@@ -1,17 +1,22 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
+using SertaoArch.Contracts;
 using SertaoArch.QueueServiceRMQ;
 using SertaoArch.UserMi.Application.Interfaces;
 
 namespace SertaoArch.Worker.Comsumers
 {
-    public abstract class Consumer : QueueService, IConsumerService
+    public abstract class Consumer<T> : QueueService, IConsumerService 
+        where T : ContractBase<long>
     {
+        protected readonly IMongoDatabase _database;
         public readonly string _queueName;
-        private readonly ILogger<Consumer> _logger;
+        private readonly ILogger<Consumer<T>> _logger;
 
-        public Consumer(IConfiguration configuration, ILogger<Consumer> logger, string queueTag) : base(configuration)
+        public Consumer(IConfiguration configuration, ILogger<Consumer<T>> logger, IMongoClient client, string queueTag) : base(configuration)
         {
+            _database = client.GetDatabase("UserMiDb");
             _queueName = configuration[$"RabbitMQ:Queues:{queueTag}"]!;
             _logger = logger;
         }
@@ -20,7 +25,9 @@ namespace SertaoArch.Worker.Comsumers
         {
             try
             {
-                await Execute(message, cancellation);
+                var contract = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(message);
+
+                await Execute(contract, cancellation);
                 _logger.LogInformation("Waiting for messages from RabbitMQ queue '{QueueName}'...", _queueName);
             }
             catch (OperationCanceledException)
@@ -33,6 +40,6 @@ namespace SertaoArch.Worker.Comsumers
             }
         }
 
-        public abstract Task Execute(string message, CancellationToken cancellation);
+        public abstract Task Execute(T message, CancellationToken cancellation);
     }
 }
