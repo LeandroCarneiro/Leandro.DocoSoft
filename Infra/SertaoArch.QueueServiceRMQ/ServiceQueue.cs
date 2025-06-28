@@ -22,8 +22,8 @@ namespace SertaoArch.QueueServiceRMQ
             {
                 HostName = _configuration["RabbitMQ:HostName"] ?? "localhost",
                 Port = int.TryParse(_configuration["RabbitMQ:Port"], out var port) ? port : 5672,
-                UserName = _configuration["RabbitMQ:UserName"] ?? "guest",
-                Password = _configuration["RabbitMQ:Password"] ?? "guest"
+                UserName = _configuration["RabbitMQ:UserName"] ?? "admin",
+                Password = _configuration["RabbitMQ:Password"] ?? "admin"
             };
         }
 

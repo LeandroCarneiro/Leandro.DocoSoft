@@ -26,8 +26,8 @@ public class Startup
             {
                 HostName = Configuration["RabbitMQ:HostName"] ?? "localhost",
                 Port = int.TryParse(Configuration["RabbitMQ:Port"], out var port) ? port : 5672,
-                UserName = Configuration["RabbitMQ:UserName"] ?? "guest",
-                Password = Configuration["RabbitMQ:Password"] ?? "guest"
+                UserName = Configuration["RabbitMQ:UserName"] ?? "admin",
+                Password = Configuration["RabbitMQ:Password"] ?? "admin"
             };
 
             return await factory.CreateConnectionAsync();
